@@ -1,0 +1,147 @@
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(23, 33, 27, 0.12);
+}
+
+.summary-address,
+.confirmation-box {
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 16px;
+  color: var(--muted);
+}
+
+.checkout-step {
+  display: none;
+}
+
+.checkout-step.active {
+  display: block;
+}
+
+.payment-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.payment-option {
+  display: grid;
+  min-height: 132px;
+  align-content: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 20px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.payment-option span {
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.payment-option small {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.secure-note {
+  display: inline-flex;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: #edf7ef;
+  color: var(--leaf-dark);
+  padding: 8px 12px;
+  font-weight: 800;
+}
+
+.upi-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 900;
+  word-break: break-word;
+}
+
+.qr-placeholder {
+  display: grid;
+  width: min(260px, 100%);
+  aspect-ratio: 1 / 1;
+  place-items: center;
+  margin: 22px auto 10px;
+  border: 2px dashed #9fb2a6;
+  border-radius: 8px;
+  background:
+    linear-gradient(45deg, transparent 46%, rgba(31, 122, 77, 0.12) 47%, rgba(31, 122, 77, 0.12) 53%, transparent 54%),
+    white;
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.center {
+  text-align: center;
+}
+
+.confirmation-box strong {
+  color: var(--ink);
+}
+
+@media (max-width: 860px) {
+  .nav,
+  .split-section {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .product-grid,
+  .contact-form,
+  .checkout-layout,
+  .payment-options {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 560px;
+  }
+
+  .modal-panel {
+    padding: 24px 18px;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .hero-copy,
+  .section,
+  .split-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .product-footer,
+  .upi-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button,
+  .payment-option {
+    width: 100%;
+  }
+}

@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishna Agri Supply</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a class="brand" href="#top" aria-label="Krishna Agri Supply home">
+          <span class="brand-mark">KA</span>
+          <span>Krishna Agri Supply</span>
+        </a>
+        <div class="nav-links" aria-label="Primary navigation">
+          <a href="#products">Products</a>
+          <a href="#farmers">Agri-Tech</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Fresh farm supply and direct support</p>
+          <h1>Food, dairy, vegetables, and farmer supply inquiries in one place.</h1>
+          <p>
+            Order daily essentials or connect with us for Agri-Tech and farmers
+            supply needs. Every inquiry goes directly to WhatsApp for a quick
+            response.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#products">Buy Products</a>
+            <button
+              class="button secondary enquire-button"
+              type="button"
+              data-product="Agri-Tech / Farmers Supply"
+            >
+              Enquire
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Shop</p>
+          <h2>Choose what you need today</h2>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card" data-product-card>
+            <div class="product-media food"></div>
+            <div class="product-content">
+              <p class="product-category">Food</p>
+              <h3>Fresh Food Basket</h3>
+              <p>Staples and seasonal farm produce packed for daily cooking.</p>
+              <div class="product-footer">
+                <strong>Rs. 499</strong>
+                <button
+                  class="button small buy-button"
+                  type="button"
+                  data-product="Fresh Food Basket"
+                  data-price="499"
+                >
+                  Buy Now
+                </button>
+              </div>
+              <button
+                class="link-button enquire-button"
+                type="button"
+                data-product="Fresh Food Basket"
+              >
+                Enquire
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-card>
+            <div class="product-media dairy"></div>
+            <div class="product-content">
+              <p class="product-category">Dairy</p>
+              <h3>Dairy Essentials Pack</h3>
+              <p>Milk, curd, paneer, and ghee options from trusted suppliers.</p>
+              <div class="product-footer">
+                <strong>Rs. 349</strong>
+                <button
+                  class="button small buy-button"
+                  type="button"
+                  data-product="Dairy Essentials Pack"
+                  data-price="349"
+                >
+                  Buy Now
+                </button>
+              </div>
+              <button
+                class="link-button enquire-button"
+                type="button"
+                data-product="Dairy Essentials Pack"
+              >
+                Enquire
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-card>
+            <div class="product-media vegetables"></div>
+            <div class="product-content">
+              <p class="product-category">Vegetables</p>
+              <h3>Vegetable Crate</h3>
+              <p>Fresh vegetables selected for home kitchens and small stores.</p>
+              <div class="product-footer">
+                <strong>Rs. 299</strong>
+                <button
+                  class="button small buy-button"
+                  type="button"
+                  data-product="Vegetable Crate"
+                  data-price="299"
+                >
+                  Buy Now
+                </button>
+              </div>
+              <button
+                class="link-button enquire-button"
+                type="button"
+                data-product="Vegetable Crate"
+              >
+                Enquire
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="farmers" class="split-section">
+        <div>
+          <p class="eyebrow">Agri-Tech and Farmers Supply</p>
+          <h2>Ask about bulk supply, farm inputs, and delivery support.</h2>
+        </div>
+        <button
+          class="button primary enquire-button"
+          type="button"
+          data-product="Agri-Tech / Farmers Supply"
+        >
+          Enquire
+        </button>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="section-heading">
+          <p class="eyebrow">Contact Us</p>
+          <h2>Send your query directly on WhatsApp</h2>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label>
+            Name
+            <input name="name" type="text" autocomplete="name" required />
+          </label>
+
+          <label>
+            Number
+            <input name="number" type="tel" autocomplete="tel" required />
+          </label>
+
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+
+          <label class="full">
+            Query
+            <textarea name="query" rows="4" required></textarea>
+          </label>
+
+          <button class="button primary full" type="submit">
+            Send on WhatsApp
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <div class="modal" id="inquiryModal" aria-hidden="true">
+      <div
+        class="modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="inquiryTitle"
+      >
+        <button
+          class="icon-button close-modal"
+          type="button"
+          aria-label="Close inquiry form"
+        >
+          x
+        </button>
+
+        <h2 id="inquiryTitle">Product Inquiry</h2>
+        <p class="muted" id="inquiryProduct">Tell us how we can help.</p>
+
+        <form class="stack-form" id="inquiryForm">
+          <input type="hidden" name="product" id="inquiryProductInput" />
+
+          <label>
+            Name
+            <input name="name" type="text" autocomplete="name" required />
+          </label>
+
+          <label>
+            Number
+            <input name="number" type="tel" autocomplete="tel" required />
+          </label>
+
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+
+          <label>
+            Query
+            <textarea name="query" rows="4" required></textarea>
+          </label>
+
+          <button class="button primary" type="submit">
+            Send on WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="checkoutModal" aria-hidden="true">
+      <div
+        class="modal-panel wide"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="checkoutTitle"
+      >
+        <button
+          class="icon-button close-modal"
+          type="button"
+          aria-label="Close checkout"
+        >
+          x
+        </button>
+
+        <div class="checkout-layout">
+          <aside class="order-summary">
+            <p class="eyebrow">Checkout</p>
+            <h2 id="checkoutTitle">Complete your order</h2>
+
+            <div class="summary-line">
+              <span>Product</span>
+              <strong id="summaryProduct">-</strong>
+            </div>
+
+            <div class="summary-line">
+              <span>Total</span>
+              <strong id="summaryPrice">Rs. 0</strong>
+            </div>
+
+            <div class="summary-address" id="summaryAddress">
+              Add your delivery details to continue.
+            </div>
+          </aside>
+
+          <section class="checkout-step active" data-step="details">
+            <h3>Delivery details</h3>
+
+            <form class="stack-form" id="checkoutDetailsForm">
+              <label>
+                Name
+                <input name="name" type="text" autocomplete="name" required />
+              </label>
+
+              <label>
+                Phone Number
+                <input name="phone" type="tel" autocomplete="tel" required />
+              </label>
+
+              <label>
+                Email
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+
+              <label>
+                Delivery Address
+                <textarea name="address" rows="4" required></textarea>
+              </label>
+
+              <button class="button primary" type="submit">
+                Continue to Payment
+              </button>
+            </form>
+          </section>
+
+          <section class="checkout-step" data-step="payment">
+            <h3>Payment Method</h3>
+
+            <div class="payment-options">
+              <button class="payment-option" type="button" data-payment="upi">
+                <span>Pay via UPI</span>
+                <small>GPay, PhonePe, Paytm</small>
+              </button>
+
+              <button class="payment-option" type="button" data-payment="cod">
+                <span>Cash on Delivery</span>
+                <small>Pay when your order arrives</small>
+              </button>
+            </div>
+          </section>
+
+          <section class="checkout-step" data-step="upi">
+            <h3>Pay via UPI</h3>
+
+            <div class="secure-note">Secure UPI payment confirmation</div>
+
+            <div class="upi-row">
+              <span id="upiId">krishnaofficio2002-1@oksbi</span>
+
+              <button
+                class="icon-button copy-upi"
+                type="button"
+                aria-label="Copy UPI ID"
+              >
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path
+                    d="M8 7a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-1v1a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-6a3 3 0 0 1 3-3h1V7Zm2 1h3a3 3 0 0 1 3 3v3h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v1Zm-3 2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H7Z"
+                  />
+                </svg>
+                <span>Copy</span>
+              </button>
+            </div>
+
+            <div class="qr-placeholder" aria-label="QR code placeholder">
+              <span>QR Code</span>
+            </div>
+
+            <p class="center muted">Scan to pay with any UPI app</p>
+
+            <form class="stack-form" id="upiForm">
+              <label>
+                Enter UPI Transaction ID
+                <input name="transactionId" type="text" required />
+              </label>
+
+              <button class="button primary" type="submit">
+                Submit Order
+              </button>
+            </form>
+          </section>
+
+          <section class="checkout-step" data-step="cod">
+            <h3>Cash on Delivery</h3>
+
+            <div class="confirmation-box" id="codSummary"></div>
+
+            <button class="button primary" id="confirmCod" type="button">
+              Confirm COD Order
+            </button>
+          </section>
+
+          <section class="checkout-step" data-step="success">
+            <h3 id="successTitle">Order submitted</h3>
+            <p class="muted" id="successMessage"></p>
+
+            <button class="button secondary close-modal" type="button">
+              Close
+            </button>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
